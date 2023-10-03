@@ -8,6 +8,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import pkg.Empleado;
+import pkg.Empleado.TipoEmpleado;
+
 class EmpleadoTest {
 
 	@BeforeAll
@@ -28,17 +31,23 @@ class EmpleadoTest {
 
 	@Test
 	void testCalculaNominaEmpleadoEncargado() {
-		fail("Not yet implemented");
+		float expected = 2500;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Encargado,0, 0);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaVendedor() {
-		fail("Not yet implemented");
+		float expected = 2000;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Vendedor,0, 0);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaOtro() {
-		fail("Not yet implemented");
+		float expected = 0;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.otro,0, 0);
+		assertEquals(expected, actual);
 	}
 	
 	@Test

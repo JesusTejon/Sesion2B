@@ -2,9 +2,9 @@ package pkg;
 
 public class Empleado {
 	
-	public enum TipoEmpleado{Vendedor, Encargado};
+	public enum TipoEmpleado{Vendedor, Encargado, otro};
 	
-	public float CalculaNominaEmpleado(TipoEmpleado tipo,float ventasMes, float horasExtra) {
+	public static float CalculaNominaEmpleado(TipoEmpleado tipo,float ventasMes, float horasExtra) {
 		
 		float sueldo=0;
 		
