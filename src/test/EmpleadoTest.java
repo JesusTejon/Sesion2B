@@ -45,59 +45,79 @@ class EmpleadoTest {
 	
 	@Test
 	void testCalculaNominaOtro() {
-		float expected = 0;
+		float expected = -1;
 		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.otro,0, 0);
 		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaVMnNegativa() {
-		fail("Not yet implemented");
+		float expected = -1;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Vendedor,-56, 0);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaVMmenor1000() {
-		fail("Not yet implemented");
+		float expected = 2000;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Vendedor,56, 0);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaVM1000_1500() {
-		fail("Not yet implemented");
+		float expected = 2000+100;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Vendedor,1000, 0);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaVMMayor1500() {
-		fail("Not yet implemented");
+		float expected = 2000+200;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Vendedor,1500, 0);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaHXPositivas() {
-		fail("Not yet implemented");
+		float expected = 2000+30*30;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Vendedor,0, 30);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculaNominaHXNegativa() {
-		fail("Not yet implemented");
+		float expected = -1;
+		float actual = Empleado.CalculaNominaEmpleado(Empleado.TipoEmpleado.Vendedor,0, -30);
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	void testCalculoNominaNetaNegativa() {
-		fail("Not yet implemented");
+		float expected = -1;
+		float actual = Empleado.calculoNominaNeta(-21);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculoNominaNetaMenos2100() {
-		fail("Not yet implemented");
+		float expected = 1500;
+		float actual = Empleado.calculoNominaNeta(1500);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculoNominaNetaEntre2100_2500() {
-		fail("Not yet implemented");
+		float expected = 2200*(1-0.15f);
+		float actual = Empleado.calculoNominaNeta(2200);
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void testCalculoNominaNetaMayor2500() {
-		fail("Not yet implemented");
+		float expected = 3000*(1-0.18f);
+		float actual = Empleado.calculoNominaNeta(3000);
+		assertEquals(expected, actual);
 	}
 
 }
